@@ -23,5 +23,8 @@ module Pokemini_app
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    g.skip_routes true
+    g.helper false
+    g.test_framework false
   end
 end
