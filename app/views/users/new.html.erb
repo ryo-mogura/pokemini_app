@@ -1,0 +1,27 @@
+<%# ユーザー登録ページ %>
+<div class="flex justify-center">
+  <%= form_with model: @user do |f| %>
+      <label class="input input-bordered flex items-center my-3">
+      <%= f.text_field :name, class:"grow", placeholder: t('activerecord.attributes.user.name') %>
+    </label>
+
+    <label class="input input-bordered flex items-center my-3">
+      <%= f.email_field :email, class:"grow", placeholder: t('activerecord.attributes.user.email') %>
+    </label>
+
+    <label class="input input-bordered flex items-center my-3">
+      <%= f.password_field :password, class: "grow", placeholder: t('activerecord.attributes.user.password') %>
+    </label>
+
+    <label class="input input-bordered flex items-center my-3">
+      <%= f.password_field :password_confirmation, class: "grow", placeholder: t('activerecord.attributes.user.password_confirmation') %>
+    </label>
+
+    <div class="flex justify-center w-full">
+      <%= f.submit t('.create'), class:"btn btn-outline btn-info my-3" %>
+    </div>
+  <% end %>
+</div>
+<div class="flex justify-center my-3">
+  <%= link_to t('.to_login_page'), login_path, class: "link link-primary" %>
+</div>
