@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   # ユーザー登録
   resources :users, only: [:new, :create, :show, :edit, :destroy]
+
+  resources :pokemons
+
 end
