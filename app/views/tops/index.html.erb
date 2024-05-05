@@ -2,6 +2,7 @@
   <h1 class="text-3xl font-bold underline text-center">
       アプリの説明
   </h1>
+  <%= link_to '投票する', pokemons_path, class: "btn btn-wide btn-outline btn-info " %>
   <div class="grid grid-cols-3 gap-4">
     <%# ここから御三家ランキングの順位を表示 %>
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
@@ -18,5 +19,4 @@
     <div class="bg-white">2</div>
     <div class="bg-primary">3</div>
   </div>
-  <%# ここから回答したランキング（実装する時間があったら）%>
 </div>
