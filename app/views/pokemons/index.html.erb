@@ -1,0 +1,16 @@
+<h1 class="text-3xl font-bold text-center">歴代御三家ランキング</h1>
+<div class="grid grid-cols-3 gap-4">
+  <% @pokemon_data.each do |pokemon| %>
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10 bg-primary">
+          <%= image_tag(pokemon["sprites"]["front_default"], size: "200", class: "rounded-xl") %>
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title"><%= pokemon["name"] %></h2>
+        <div class="card-actions">
+          <button class="btn btn-primary">投票する</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

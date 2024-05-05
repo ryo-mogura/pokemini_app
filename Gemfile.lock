@@ -308,6 +308,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   draper
+  faraday
   jbuilder
   jsbundling-rails
   meta-tags
