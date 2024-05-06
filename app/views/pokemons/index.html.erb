@@ -1,21 +1,22 @@
-<h1 class="text-3xl font-bold text-center">歴代御三家ランキング</h1>
-
-<div class="grid grid-cols-3 gap-4">
-  <% @pokemons.each do |pokemon| %>
-    <div class="card w-96 bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10 bg-primary">
-          <% sprites = JSON.parse(pokemon.sprites) %>
-          <%= image_tag sprites&.[]("front_default"), alt: pokemon.name, size: "150x150"%>
-      </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title"><%= pokemon.name %></h2>
-        <p>投票数：<%= @pokemons_votes[pokemon.id] %></p>
-        <div class="card-actions">
-          <%= link_to "投票する", votes_path(pokemon_id: pokemon.id), data: { "turbo-method": :post } , class: "btn btn-primary" %>
+<h1 class="text-3xl font-bold text-center my-5">歴代御三家ランキング</h1>
+<div class="flex justify-center">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-28">
+    <% @pokemons.each do |pokemon| %>
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10 bg-primary-content">
+            <% sprites = JSON.parse(pokemon.sprites) %>
+            <%= image_tag sprites&.[]("front_default"), alt: pokemon.name, size: "150x150"%>
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title"><%= pokemon.name %></h2>
+          <p>投票数：<%= @pokemons_votes[pokemon.id] %></p>
+          <div class="card-actions">
+            <%= link_to "投票する", votes_path(pokemon_id: pokemon.id), data: { "turbo-method": :post } , class: "btn btn-outline btn-success btn-xs sm:btn-sm md:btn-md lg:btn-lg" %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 
