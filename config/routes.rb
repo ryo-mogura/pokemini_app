@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   # ユーザー登録
-  resources :users, only: [:new, :create, :show, :edit, :destroy]
+  resources :users, only: %i[new create show edit destroy]
 
   resources :pokemons
-  resources :votes, only: [:new, :create]
-
+  resources :votes, only: %i[new create]
 end

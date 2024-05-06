@@ -6,4 +6,3 @@ class PokemonsController < ApplicationController
     end
   end
 end
-

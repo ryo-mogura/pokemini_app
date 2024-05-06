@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   def new; end
+
   def create
     @votes = Vote.new(user_id: current_user.id, pokemon_id: params[:pokemon_id])
 
