@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -15,12 +17,6 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def show; end
-
-  def edit; end
-
-  def destroy; end
 
   private
 
