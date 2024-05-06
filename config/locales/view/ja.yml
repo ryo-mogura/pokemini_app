@@ -20,6 +20,10 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+  votes:
+    create:
+      success: 投票しました
+      failure: 投票に失敗しました
   header:
     title: Pokemini
     guest: ゲストログイン(閲覧用)

@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :destroy]
 
   resources :pokemons
+  resources :votes, only: [:new, :create]
 
 end
