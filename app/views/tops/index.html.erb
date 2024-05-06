@@ -1,7 +1,9 @@
 <div class="top-wrapper">
-  <h1 class="text-3xl font-bold underline text-center my-10">
-      アプリの説明
+  <h1 class="text-3xl font-bold  text-center my-10">
+      最初の仲間にするならどのポケモンを選ぶ？
   </h1>
+  <p class="font-bold  text-center">歴代の御三家の中であなたの推しはどの子ですか？<br>下のボタンから投票してランキングに反映しましょう！</p>
+
   <div class="flex justify-center my-10">
     <%= link_to '投票する', pokemons_path, class: "btn btn-wide btn-outline btn-info" %>
   </div>
@@ -10,8 +12,9 @@
   </h1>
   <div class="flex justify-center">
     <div class="grid grid-cols-3 gap-10 my-10">
-      <% @vote_pokemons.each do |pokemon| %>
+      <% @vote_pokemons.each_with_index do |pokemon, index| %>
         <div class="card card-compact w-96 bg-base-100 shadow-xl">
+          <p class="font-bold text-center"><%= "#{index + 1}位" %></p>
           <figure class="px-10 pt-10 bg-primary-content ">
             <% sprites = JSON.parse(pokemon.sprites) %>
             <%= image_tag sprites&.[]("front_default"), alt: pokemon.name, class:"rounded-xl", size: "150x150"%>
