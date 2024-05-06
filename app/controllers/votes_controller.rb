@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class VotesController < ApplicationController
-
   def new; end
 
   def create

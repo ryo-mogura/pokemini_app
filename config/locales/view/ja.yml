@@ -1,7 +1,4 @@
 ja:
-  defaults:
-    flash_message:
-      require_login: ログインしてください
   helpers:
     submit:
       create: 登録
@@ -33,3 +30,4 @@ ja:
     new: 新規登録
     login: ログイン
     logout: ログアウト
+    profile: マイページ
