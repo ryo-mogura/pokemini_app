@@ -1,22 +1,27 @@
 <div class="top-wrapper">
-  <h1 class="text-3xl font-bold underline text-center">
+  <h1 class="text-3xl font-bold underline text-center my-10">
       アプリの説明
   </h1>
-  <%= link_to '投票する', pokemons_path, class: "btn btn-wide btn-outline btn-info " %>
-  <div class="grid grid-cols-3 gap-4">
-    <%# ここから御三家ランキングの順位を表示 %>
-    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-      <h2 class="card-title">名前</h2>
-      <figure><%= image_tag "nophoto.jpg" %></figure>
-      <div class="card-body">
-        <h2 class="card-title">名前</h2>
-        <p>投票数</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Buy Now</button>
+  <div class="flex justify-center my-10">
+    <%= link_to '投票する', pokemons_path, class: "btn btn-wide btn-outline btn-info" %>
+  </div>
+  <h1 class="text-3xl font-bold text-center">
+    投票数ランキング
+  </h1>
+  <div class="flex justify-center">
+    <div class="grid grid-cols-3 gap-10 my-10">
+      <% @vote_pokemons.each do |pokemon| %>
+        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10 bg-primary-content ">
+            <% sprites = JSON.parse(pokemon.sprites) %>
+            <%= image_tag sprites&.[]("front_default"), alt: pokemon.name, class:"rounded-xl", size: "150x150"%>
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title"><%= pokemon.name %></h2>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-    <div class="bg-white">2</div>
-    <div class="bg-primary">3</div>
   </div>
 </div>
+
