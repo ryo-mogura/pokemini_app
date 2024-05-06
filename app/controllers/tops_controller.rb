@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TopsController < ApplicationController
   MAX_VOTE_COUNT = 3
   def index
