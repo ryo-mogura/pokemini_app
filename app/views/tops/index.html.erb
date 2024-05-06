@@ -1,8 +1,8 @@
 <div class="top-wrapper">
-  <h1 class="text-3xl font-bold  text-center my-10">
-      最初の仲間にするならどのポケモンを選ぶ？
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center my-10">
+      最初の仲間はどのポケモン？
   </h1>
-  <p class="font-bold  text-center">歴代の御三家の中であなたの推しはどの子ですか？<br>下のボタンから投票してランキングに反映しましょう！</p>
+  <p class="text-center">歴代の御三家の中であなたの推しは？<br>投票してランキングに反映しよう！</p>
 
   <div class="flex justify-center my-10">
     <%= link_to '投票する', pokemons_path, class: "btn btn-wide btn-outline btn-info" %>
@@ -11,7 +11,8 @@
     投票数ランキング
   </h1>
   <div class="flex justify-center">
-    <div class="grid grid-cols-3 gap-10 my-10">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
       <% @vote_pokemons.each_with_index do |pokemon, index| %>
         <div class="card card-compact w-96 bg-base-100 shadow-xl">
           <p class="font-bold text-center"><%= "#{index + 1}位" %></p>
