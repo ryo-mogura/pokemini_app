@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
@@ -6,4 +8,3 @@ class PokemonsController < ApplicationController
     end
   end
 end
-
